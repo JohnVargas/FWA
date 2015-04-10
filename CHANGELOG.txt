@@ -6,6 +6,11 @@
 #####################
 # Change Log v1.0.7 #
 #####################
+Change vulns add Dom-xss, sqli, webservices, allow methods HTTP, allow
+
+#####################
+# Change Log v1.0.7 #
+#####################
 
 Re-designed the login page + made some other slight cosmetic changes. 06/06/2010 (ethicalhack3r)
 Started PostgreSQL implementation. 15/03/2010 (ethicalhack3r)
