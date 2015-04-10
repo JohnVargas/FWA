@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>
+			DOM XSS 05
+		</title>
+	</head>
+	<body>
+<h4>Example Exploit: dom-xss-05.html#javascript:alert(1)</h4>
+
+		<a id="anchor" name="anchor">Continue</a>
+		<script type="text/javascript">
+			var redir = location.hash.split("#")[1];
+			x = document.getElementById('anchor');
+			x.setAttribute('href',redir);
+		</script>
+	</body>
+</html>

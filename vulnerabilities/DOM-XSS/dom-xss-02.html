@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>
+			DOM XSS 02
+		</title>
+		<script type="text/javascript">
+			function timedMsg(callback)
+			{
+			if(callback){
+				var t=setTimeout(eval('callback'),500);
+				return 0;
+			}
+			}
+			function fire()
+			{
+					var call = location.hash.split("#")[1];
+					timedMsg(call);
+			}
+		</script>
+	</head>
+	<body onload="fire()">
+		<h4>Example Exploit: dom-xss-02.html#alert(1)</h4>
+		<form>
+			<input type="button" value="Display timed alertbox!" onclick="fire()" />
+		</form>
+	</body>
+</html>

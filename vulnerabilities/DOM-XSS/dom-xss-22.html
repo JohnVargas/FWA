@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<style type="text/css">
+			h4 { font-family: Verdana; }
+		</style>
+		<title>
+			DOM XSS 22
+		</title>
+	</head>
+	<body>
+	<h4>Works with IE 6, 7, 8, 9<br />Chrome 15 (XSS Filter Block)<br /><br />Example Exploit: dom-xss-22.html#game=&lt;script&gt;alert(1)&lt;/script&gt;</h4>
+			<div>
+				<select>
+					<script type="text/javascript">
+						var pos = document.location.href.indexOf("game="); 
+						if (pos != -1)
+						{
+							pos = pos + 5;
+							var name = document.location.href.substring(pos, document.location.href.length);
+							document.write("<OPTION value=1>" + name + "</OPTION>");
+							document.write("<OPTION value=2>Cricket</OPTION>");
+							document.write("<OPTION value=3>Hockey</OPTION>");
+						}
+						else
+						{
+							document.write("<OPTION value=2>Cricket</OPTION>");
+							document.write("<OPTION value=3>Hockey</OPTION>");
+						}
+					</script>
+				</select>
+			</div>
+	</body>
+</html>

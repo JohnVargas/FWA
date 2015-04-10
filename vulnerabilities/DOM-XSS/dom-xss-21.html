@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<title>
+			DOM XSS 7
+		</title>
+	</head>
+	<body>
+		<p>You were sent here by:
+			<script>
+				document.write(document.referrer);
+			</script>
+		</p>
+	</body>
+</html>

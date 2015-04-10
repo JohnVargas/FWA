@@ -1,0 +1,16 @@
+<html>
+<head>
+<title>
+DOM XSS 07
+</title>
+</head>
+<body>
+<h4>Works with Chrome, Firefox<br /><br />Example Exploit: dom-xss-07.html#&lt;img src=1 onerror=alert(1)&gt;</h4>
+<div id="mydiv"></div>
+<script>
+param = location.hash.split("#")[1];
+node = document.getElementById('mydiv');
+node.innerHTML=param;
+</script>
+</body>
+</html>

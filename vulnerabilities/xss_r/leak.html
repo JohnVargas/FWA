@@ -1,0 +1,44 @@
+<html>
+
+<font color="green">
+
+<script language="JavaScript">
+</script>
+<script>
+
+
+txt = "<b><u>Info:</u></b><br />";
+txt+= "<b><font color=\"blue\">[+]Browser CodeName:</font> </b>" + navigator.appCodeName + "<br />";
+txt+= "<b><font color=\"blue\">[+]Browser Name:</font> </b>" + navigator.appName + "<br />";
+txt+= "<b><font color=\"blue\">[+]Browser Version:</font> </b>" + navigator.appVersion + "<br />";
+txt+= "<b><font color=\"blue\">[+]Cookies Enabled:</font> </b>" + navigator.cookieEnabled + "<br />";
+txt+= "<b><font color=\"blue\">Platform:</font> </b>" + navigator.platform + "<br />";
+txt+= "<b><font color=\"blue\">User-agent header:</font> </b>" + navigator.userAgent + "<br />";
+document.write(txt);
+
+if (typeof navigator.javaEnabled == "function") {
+    document.write("<font color=\"blue\"><b>Java turned on: </b></font>", navigator.javaEnabled() ? "<font color=\"red\">Yes</font>" : "<font color=\"blue\">No</font>");
+	} else {
+        document.write("<font color=\"blue\"><b>Java turned on: </b></font>", window.clientInformation.javaEnabled() ? "<font color=\"red\">Yes</font>" : "<font color=\"blue\">No</font>");
+	}
+
+$.each(navigator.plugins, function() {
+   a = this.name;
+   b = a.match(/PDF/g);
+   c = a.match(/Office/g);
+   if (b != null){
+       document.write("<br /><br /><b><u>Maybe Vulnerable:</u></b> <br />");
+       document.write("<font color=\"red\">" + a + "</font><br />");
+   }
+    if (c!=null){
+        document.write("<br /><br /><b><u>Office: </u></b> <br />");
+        document.write("<font color=\"red\">" + a + "</font><br />");
+
+    }
+});
+
+</script>
+
+</font>
+
+</html>

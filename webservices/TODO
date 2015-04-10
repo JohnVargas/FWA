@@ -1,0 +1,6 @@
+TODO:
+*********************************************
+Move nusoap to the DVWA includes directory
+Add medium and high versions
+Add menus and stuff
+Add ws-security version. (Maybe this should be the high or medium)

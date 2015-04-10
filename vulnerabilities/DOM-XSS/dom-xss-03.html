@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>
+			DOM XSS 03
+		</title>
+		<script>
+			function go(){
+				if (document.location.hash.split("#")[1])
+				{
+					document.location.replace(document.location.hash.split("#")[1]);
+				}
+			}
+		</script>
+	</head>
+	<body onload="go()">
+		<h4>Example Exploit: dom-xss-03.html#javascript:alert(1)</h4>
+			<input type="button" id="btn1" value="Click Me" onClick="go()"></input>
+		
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>
+			DOM XSS 23
+		</title>
+	</head>
+	<body>
+<h4>Works with Firefox & IE 6,7,8,9<br /><br />Example Exploit: dom-xss-23.html#javascript:alert(1)</h4>
+			<p>This content is not served from our website. Are you sure you want to view this content? <a href="javascript:reload()">Yes, allow!</a></p>
+		</div>
+		<p><iframe id="frame1" name="frame1" frameborder="no" marginwidth="0" marginheight="0" height="100%" width="100%" src="about:blank"></iframe></p>
+		<script>
+			function reload()
+			{
+				var redir = location.hash.split("#")[1];
+				if (redir)
+				{
+					x = document.getElementById('frame1');
+					x.setAttribute('src',redir);
+					//x.src=x.src;
+				}
+			}
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<style type="text/css">
+			h4 { font-family: Verdana; }
+		</style>
+		<title>
+			DOM XSS 4
+		</title>
+		<script type="text/javascript">
+			function setBG()
+			{
+				var img_path = unescape(document.URL.substring(document.URL.indexOf('?img=')+6,document.URL.length));
+				document.body.style.backgroundImage="url("+img_path+")";
+				document.body.style.backgroundColor="#f3f3f3";
+			}
+		</script>
+	</head>
+
+	<body>
+		<h4>Works with IE 6<br /><br />Example Exploit: dom-xss-4.html?img=javascript:alert(1)</h4>
+		<button type="button" onclick="setBG()">Set background image</button>
+	</body>
+</html>
