@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.1.66, for debian-linux-gnu (i486)
 --
--- Host: localhost    Database: dvwa
+-- Host: localhost    Database: fwa
 -- ------------------------------------------------------
 -- Server version	5.1.66-0ubuntu0.10.04.2
 
@@ -36,7 +36,7 @@ CREATE TABLE `guestbook` (
 
 LOCK TABLES `guestbook` WRITE;
 /*!40000 ALTER TABLE `guestbook` DISABLE KEYS */;
-INSERT INTO `guestbook` VALUES (1,'Este es un comentatio de Prueba','<b>Prueba</b>'),(2,'<script> alert(document.cookie) </sctipt>','john'),(3,'<script> alert(document.cookie) </sctipt>','john'),(4,'<script> alert(document.cookie); </script>','hola'),(5,'<script> alert(document.cookie); </script>','HOLA');
+INSERT INTO `guestbook` VALUES (1,'Este es un comentario de Prueba','<b>Prueba</b>'),(2,'<script> alert(document.cookie) </sctipt>','john'),(3,'<script> alert(document.cookie) </sctipt>','john'),(4,'<script> alert(document.cookie); </script>','hola'),(5,'<script> alert(document.cookie); </script>','HOLA');
 /*!40000 ALTER TABLE `guestbook` ENABLE KEYS */;
 UNLOCK TABLES;
 
